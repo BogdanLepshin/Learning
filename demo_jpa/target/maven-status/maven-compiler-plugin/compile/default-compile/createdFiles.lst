@@ -1,0 +1,12 @@
+ua\testing\demo_jpa\dto\UserDTO.class
+ua\testing\demo_jpa\entity\User$UserBuilder.class
+ua\testing\demo_jpa\service\UserService.class
+ua\testing\demo_jpa\repository\UserRepository.class
+ua\testing\demo_jpa\entity\RoleType.class
+ua\testing\demo_jpa\dto\UserDTO$UserDTOBuilder.class
+ua\testing\demo_jpa\dto\UsersDTO.class
+ua\testing\demo_jpa\entity\User.class
+ua\testing\demo_jpa\controller\LoginFormController.class
+ua\testing\demo_jpa\DemoJpaApplication.class
+ua\testing\demo_jpa\controller\PageController.class
+ua\testing\demo_jpa\dto\UsersDTO$UsersDTOBuilder.class
