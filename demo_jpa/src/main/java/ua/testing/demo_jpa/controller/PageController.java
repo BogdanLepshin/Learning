@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class PageController {
     @RequestMapping("/api")
     public String mainPage(){
-        return "login.html";
+        return "login";
     }
 
     @RequestMapping("/all_user")
     public String userPage(){
-        return "users/login.html";
+        return "users/index";
     }
 }
