@@ -2,6 +2,8 @@ package ua.testing.demo_jpa.dto;
 
 import lombok.*;
 
+import javax.validation.constraints.*;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -9,9 +11,11 @@ import lombok.*;
 @Builder
 @ToString
 public class UserDTO {
-    private String firstName;
-    private String lastName;
+    @NotBlank(message = "Email is required")
+    @Email(message = "Must have email's address format")
     private String email;
+    @NotBlank(message = "Password is required")
+    @Size(min=8, message="Password must be at least 8 symbols")
     private String password;
-    private String confirmPassword;
+
 }

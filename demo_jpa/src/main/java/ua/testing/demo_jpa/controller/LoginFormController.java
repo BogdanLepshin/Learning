@@ -2,11 +2,16 @@ package ua.testing.demo_jpa.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ua.testing.demo_jpa.dto.UserDTO;
 import ua.testing.demo_jpa.service.UserService;
+
+import javax.servlet.http.HttpServletRequest;
+import java.security.Principal;
+
 
 @Slf4j
 @Controller
@@ -27,22 +32,11 @@ public class LoginFormController {
     }
 
     @GetMapping("login")
-    public String login() {
-        //model.addAttribute("user", new UserDTO());
-        return "login";
-    }
-
-    //@ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("login")
-    public String loginFormController(@ModelAttribute UserDTO user, Model model) {
-        log.info("CONTROLLER");
-        if (!userService.findByUserLoginAndPassword(user).isPresent()) {
-            model.addAttribute("error_msg", "Wrong email or password");
-            return "login";
+    public String login(Principal principal, Authentication auth) {
+        if (principal != null) {
+            return "redirect:/users";
         }
-        log.info("{}", userService.findByUserLoginAndPassword(user));
-        log.info("{}", user);
-        return "redirect:/users";
+        return "login";
     }
 
     @GetMapping("users")

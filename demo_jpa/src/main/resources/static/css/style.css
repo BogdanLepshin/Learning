@@ -1,0 +1,35 @@
+.page {
+    background-color: lightgray;
+}
+
+.container-fluence {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+    background-color: lightgray;
+}
+
+.card {
+    max-width: 400px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    margin: 0 auto 30px;
+}
+.form-signin {
+    padding: 15px;
+
+    background-color: white;
+}
+
+.btn {
+}
+
+.login-box-msg {
+    text-align: center;
+}
+
+.logout {
+    margin-left: 5px;
+    margin-right: 5px;
+}
