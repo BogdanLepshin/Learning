@@ -13,17 +13,17 @@ import javax.validation.constraints.Size;
 @Builder
 @ToString
 public class RegisterForm {
-    @NotBlank(message = "First name is required")
+    @NotBlank(message = "{registration.validation.firstName}")
     private String firstName;
-    @NotBlank (message = "Last name is required")
+    @NotBlank (message = "{registration.validation.lastName}")
     private String lastName;
-    @NotBlank(message = "Email is required")
-    @Email(message = "Must have email's address format")
+    @NotBlank(message = "{registration.validation.NotBlank.email}")
+    @Email(message = "{registration.validation.email}")
     private String email;
-    @NotBlank(message = "Password is required")
-    @Size(min=8, message="Password must be at least 8 symbols")
+    @NotBlank(message = "{registration.validation.password}")
+    @Size(min=8, message="{registration.validation.size.password}")
     private String password;
-    @NotBlank(message = "Confirmation is required")
-    @Size(min=8, message="Password must be at least 8 symbols")
+    @NotBlank(message = "{registration.validation.confirmPassword}")
+    @Size(min=8, message="{registration.validation.size.confirmPassword}")
     private String confirmPassword;
 }

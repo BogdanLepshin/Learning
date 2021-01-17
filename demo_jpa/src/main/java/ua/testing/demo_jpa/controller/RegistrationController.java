@@ -50,10 +50,6 @@ public class RegistrationController {
         if (bindingResult.hasErrors()) {
             return "register";
         }
-        if (!registerForm.getPassword().equals(registerForm.getConfirmPassword())) {
-            model.addAttribute("error_msg", "Passwords doesn't match");
-            return "register";
-        }
         User user = User.builder()
                 .firstName(registerForm.getFirstName())
                 .lastName(registerForm.getLastName())
@@ -62,7 +58,7 @@ public class RegistrationController {
                 .role(RoleType.ROLE_USER)
                 .build();
         if (!userService.saveNewUser(user)) {
-            model.addAttribute("error_msg", "User exists already!");
+            model.addAttribute("error_user_exists", "");
             return "register";
         }
 

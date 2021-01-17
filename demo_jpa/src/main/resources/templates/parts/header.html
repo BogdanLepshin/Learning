@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">ONLINE SHOP</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+        <ul class="navbar-nav">
+            <div sec:authorize="isAnonymous()">
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Sign In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">Sign Up</a>
+                </li>
+            </div>
+            <li class="nav-item">
+                <form class="nav-link" action="/logout" method="post">
+                    <input type="submit" class="btn btn-link" value="Log out">
+                </form>
+            </li>
+        </ul>
+
+
+    </div>
+    <select style="color:rgba(255,255,255,.55)" class="custom-control-dark bg-dark" id="locales">
+        <option value=""></option>
+        <option value="en" th:text="English" th:selected="__${#locale}__=='en'" selected></option>
+        <option value="ru" th:text="Русский" th:selected="__${#locale}__=='ru'"></option>
+    </select>
+</nav>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#locales").change(function () {
+            var selectedOption = $('#locales').val();
+            window.location.replace('?lang=' + selectedOption);
+        });
+    });
+</script>
+</html>

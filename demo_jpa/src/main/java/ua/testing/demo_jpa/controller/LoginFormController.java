@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import ua.testing.demo_jpa.dto.UserDTO;
 import ua.testing.demo_jpa.service.UserService;
 
-import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
 
 
